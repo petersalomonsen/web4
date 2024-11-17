@@ -291,6 +291,7 @@ router.post('/web4/contract/:contractId/:methodName', withNear, withAccountId, r
 });
 
 function contractFromHost(host) {
+    host = host.replace(/\-\-/g,'.');
     if (host.endsWith('.near.page')) {
         return host.replace(/.page$/, '');
     }

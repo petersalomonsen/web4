@@ -1,0 +1,8 @@
+{
+    "customizations": {
+        "vscode": {
+        "extensions": ["github.vscode-github-actions"]
+        }
+    },
+    "postCreateCommand": ".devcontainer/setup.sh"
+}
