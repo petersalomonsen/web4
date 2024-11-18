@@ -112,6 +112,18 @@ test('web4-min test.near.page/', async t => {
     t.match(res.text, /Welcome to Web4!/);
 });
 
+test.only('web4-min subtest--test.near.page/', async t => {
+    await setup(t);
+
+    const res = await request
+        .get('/')
+        .set('Host', 'subtest--test.near.page');
+
+    t.equal(res.status, 200);
+    t.equal(res.headers['content-type'], 'text/html; charset=utf-8');
+    t.match(res.text, /Welcome to Web4!/);
+});
+
 test('web4-min set-static-url.near.page/css/brands.css (passthrough content type)', async t => {
     await setup(t);
 
