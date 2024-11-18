@@ -170,6 +170,8 @@ This works same as `near.page` but for contracts deployed on testnet. Every `acc
 
 # Running locally
 
+*If running in a "Devcontainer" steps 1-3 are done automatically in [.devcontainer/setup.sh](./.devcontainer/setup.sh)*
+
 1. Install [mkcert](https://mkcert.dev/).
 2. Install local certificate authority (this allows browser to trust self-signed certificates):
     ```bash
@@ -181,7 +183,7 @@ This works same as `near.page` but for contracts deployed on testnet. Every `acc
     ```
 3. Run `web4` man-in-the-middle proxy locally:
     ```bash
-    IPFS_GATEWAY_URL=https://ipfs.near.social NODE_ENV=mainnet WEB4_KEY_FILE=./_wildcard.near.page-key.pem WEB4_CERT_FILE=./_wildcard.near.page.pem npx web4-near
+    IPFS_GATEWAY_URL=https://ipfs.near.social NODE_ENV=mainnet WEB4_KEY_FILE=./_wildcard.near.page-key.pem WEB4_CERT_FILE=./_wildcard.near.page.pem node bin/web4
     ```
 4. Setup browser to use [automatic proxy configuration file](https://developer.mozilla.org/en-US/docs/Web/HTTP/Proxy_servers_and_tunneling/Proxy_Auto-Configuration_PAC_file) at `http://localhost:8080/` or to use `localhost:8080` as an HTTPS proxy server. 
 
